@@ -70,6 +70,6 @@ STORAGE_MEMORY_SIZE_MB 4096""" % (batch_size, batch_size)
 if __name__ == "__main__":
     for batchsize in [ 10 ** n for n in range(5) ]:
         conf = generate_conf(batchsize)
-        f = open("./conf_%s" % batchsize, "w")
+        f = open("./cluster/conf_%s" % batchsize, "w")
         f.write(conf)
         f.close()
