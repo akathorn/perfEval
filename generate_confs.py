@@ -66,13 +66,14 @@ def generate(out, extra_conf):
     print "Writing to", out, "with additional configuration", extra_conf
 
     outconf = conf.copy()
-    conf.update(extra_conf)
+    outconf.update(extra_conf)
 
-    write_conf(conf, out)
+    write_conf(outconf, out)
 
 def write_conf(conf, out):
     f = open(out, "w")
     f.write("\n".join([ k + " " + v for (k,v) in conf.iteritems() ]))
+    f.flush()
     f.close()
 
 
